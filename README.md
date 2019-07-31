@@ -1,2 +1,2 @@
 # pipelines
-git for testing pipelines
+git for testing pipelines.
