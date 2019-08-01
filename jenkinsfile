@@ -1,3 +1,4 @@
 node {
    echo 'Que es lo que es loco!? '
+   sh 'env'
 }
