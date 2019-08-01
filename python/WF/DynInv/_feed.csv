@@ -1,0 +1,11 @@
+CI_NAME,CI_ID,STATUS,STATUSREASON,SYSTEMROLE,SERVER_FUNCTION,OWNED_BY,APP_SUPPORT,OS_SUPPORT,SA_DVC_ID,SA_SERVERNAME,SA_LOCALHOSTNAME,SA_PRIMARY_IP,SA_MANAGEMENT_IP,SA_OS_VERSION,SA_AGENT_VERSION,SA_AGENT_INTIAL_REG,SA_UNREACHABLEDAYS,STATE,SA_CUSTOMER,SA_FACILITY,PRIMARYCORE,SA_MESH,CERTOWNER,CERTVALIDDATE
+Blacky,OI-AAA0001,Deployed,None,Prod,Dev Server,bilorge,All,Linux,1000001,blacky.els.com,blacky,192.168.1.12,192.168.1.2,Opensuse Leap 15,-1,-1,0,OK,Wells Fargo,BLUE-72,sasvprc02,GREEN,bilorge,01/01/20
+Paradox,OI-AAA0001,Deployed,None,Prod,Dev Server,bilorge,All,Linux,1000001,paradox.els.com,paradox,192.168.1.13,192.168.1.2,Opensuse Leap 15,-1,-1,0,OK,Wells Fargo,BLUE-72,sasvprc02,GREEN,bilorge,01/01/20
+,OI-AAA0001,Deployed,None,UAT,SUPPORT SERVER,,,,1000001,serverexample001.wellsfargo.com,,10.10.10.1,10.10.10.1,Linux 7SERVER-X86_64,,,0,OK,Customer,PURPLE-OX3,sasvprc02,PURPLE,,
+serverexample003,OI-AAA0003,Being Assembled,LOB Ready,UAT,SUPPORT SERVER,,,,1000001,serverexample003.wellsfargo.com,,10.10.10.3,10.10.10.3,Linux 7SERVER-X86_64,,,0,OK,Customer,GREY-SLS1,sasigyc02,GREY,,
+serverexample004,OI-AAA0004,Deployed,None,UAT,SUPPORT SERVER,,,,1000001,serverexample004.wellsfargo.com,,10.10.10.4,10.10.10.4,Windows Server 2012 R2 Standard x64 RTM,,,0,OK,Customer,PURPLE-OX4,saoxprc02,PURPLE,,
+serverexample005,OI-AAA0005,Deployed,None,UAT,SUPPORT SERVER,,,,1000001,serverexample005.wellsfargo.com,,10.10.10.5,10.10.10.5,Linux 6SERVER-X86_64,,,0,OK,Customer,GREEN-SV3,sasignc02,GREEN,,
+serverexample006,OI-AAA0006,Deployed,None,UAT,SUPPORT SERVER,,,,1000001,serverexample006.wellsfargo.com,,10.10.10.6,10.10.10.6,Linux 7SERVER-X86_64,,,0,OK,Customer,GREY-SV2,sasigyc02,GREY,,
+serverexample007,OI-AAA0007,Deployed,None,UAT,SUPPORT SERVER,,,,1000001,serverexample007.wellsfargo.com,,10.10.10.7,10.10.10.7,Linux 7SERVER-X86_64,,,0,OK,Customer,GREEN-SV3,satmgnc02,GREEN,,
+serverexample008,OI-AAA0008,Deployed,None,UAT,SUPPORT SERVER,,,,1000001,serverexample008.wellsfargo.com,,10.10.10.8,10.10.10.8,Windows Server 2012 R2 Standard x64 RTM,,,0,OK,Customer,ORANGE-TM1,saoxogc02,ORANGE,,
+serverexample009,OI-AAA0009,Being Assembled,LOB Ready,UAT,SUPPORT SERVER,,,,1000001,serverexample009.wellsfargo.com,,10.10.10.9,10.10.10.9,Windows Server 2012 R2 Standard x64 RTM,,,0,OK,Customer,GREY-CIC2,sasvgyc02,GREY,,

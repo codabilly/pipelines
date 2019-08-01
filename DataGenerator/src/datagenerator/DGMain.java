@@ -1,8 +1,7 @@
 package datagenerator;
 
-import java.util.Date;
-
-
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  *
@@ -13,14 +12,27 @@ public class DGMain {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         DGMain me = new DGMain();
-        System.out.println("Hi!!!!!");
-        me.SayDate();
+        DataDumpRow dr;
+        
+        long startTimeMills = System.currentTimeMillis();
+        long completionTime = 0;
+        
+        FileWriter fw = new FileWriter("feed.csv");
+        try {
+            dr = new DataDumpRow();
+            fw.write(dr.printHeaders() + "\n");
+            
+            for (int i = 0; i < 10000; i++) {
+                fw.write(dr.DataDynDumpRow("TEST-SERVER-" + i, "TEST", "Linux", "TEST-SERVER-" + i + ".els.com", "TEST-SERVER-" + i, "OpenSuse Leap 15") + "\n");
+            }
+        } finally {
+            fw.close();
+            completionTime = System.currentTimeMillis() - startTimeMills;
+            System.out.println("Total run time in milliseconds: " + completionTime);
+        }
+
     }
-    
-    public void SayDate() {
-        System.out.println(new Date().toInstant().toString()); 
-    }
-    
+
 }
