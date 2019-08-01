@@ -24,7 +24,7 @@ public class DGMain {
             dr = new DataDumpRow();
             fw.write(dr.printHeaders() + "\n");
             
-            for (int i = 0; i < 10000; i++) {
+            for (int i = 0; i < 2500; i++) {
                 fw.write(dr.DataDynDumpRow("TEST-SERVER-" + i, "TEST", "Linux", "TEST-SERVER-" + i + ".els.com", "TEST-SERVER-" + i, "OpenSuse Leap 15") + "\n");
             }
         } finally {
