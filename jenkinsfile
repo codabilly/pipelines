@@ -1,4 +1,4 @@
 node {
-   echo 'Que es lo que es loco!? '
+   echo 'Que es lo que es locutos? '
    sh 'env'
 }
