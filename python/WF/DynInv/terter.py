@@ -121,14 +121,3 @@ if __name__ == "__main__":
     # Stop the clock
     time_stop_mills = int(round(time.time() * 1000))
     print('Total execution time: ' + str(time_stop_mills - time_start_mills))
-
-# ---------------------SCRATCH------------------
-
-# server = WFServer('blacky.els.com','blacky','192.168.1.21','Linux','Opensuse Leap 15','prod','Sendera - DTC')
-# server.tostring()
-
-
-# content = feed.readlines()
-#
-# for cnt in content:
-#     print(cnt)
