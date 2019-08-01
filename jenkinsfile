@@ -1,3 +1,3 @@
 node {
-   echo 'Que es lo que es colo!? '
+   echo 'Que es lo que es loco!? '
 }
