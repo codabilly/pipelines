@@ -1,0 +1,13 @@
+---
+
+- name: My Inventory Module Tester Playbook
+  gather_facts: no
+  hosts: all
+
+  tasks:
+  - name: Testing the Inventory parser module
+    invp:
+    register: results
+
+  - name: lets view the results
+    debug: var=results

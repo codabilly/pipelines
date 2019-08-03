@@ -1,4 +1,5 @@
 from WFServer import *
+# from WF.DynInv.WFServer import *
 import csv
 import yaml
 import json
@@ -7,6 +8,7 @@ import sys
 import getopt
 
 # Global Params
+feed = ''
 inventory = {'all': {}}
 hosts = {'hosts': {}}
 children = {'children': {}}
@@ -84,8 +86,9 @@ def persisteData():
         # yaml.safe_dump(inventory, outfile, default_flow_style=False)
         json.dump(inventory, outfile, indent=2)
 
-if __name__ == "__main__":
+def launch():
     #read in the CSV file
+    global feed 
     feed = open('feed.csv', mode='r')
 
     # Retrieve parameters passed in
@@ -116,8 +119,12 @@ if __name__ == "__main__":
     
     #Write the data out
     persisteData()
-    print(datacenter)
+    # print(datacenter)
 
     # Stop the clock
     time_stop_mills = int(round(time.time() * 1000))
     print('Total execution time: ' + str(time_stop_mills - time_start_mills))
+    return inventory
+
+if __name__ == "__main__":
+    launch()
