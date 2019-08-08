@@ -57,6 +57,7 @@ class InventoryModule(BaseInventoryPlugin):
             # read in the CSV file
             global feed
             feed = open(host_list, mode='r')
+            print('opening ' + host_list)
         except:
             print('Roh roh!')
             return False
@@ -82,6 +83,8 @@ class InventoryModule(BaseInventoryPlugin):
             # given column to make sure we are not storing a header
             if srv.os != 'OS_SUPPORT':                                                  # make sure we are skipping the header row 
                 self.inventory.add_host(srv.fqn, group=srv.dtc)
+                # self.inventory.add_host(srv.fqn, group=srv.dtc, port=22)              # just another example of the function call using the port value
+                self.inventory.set_variable(srv.fqn, 'ansible_host', srv.ip)            # Enter variable for the host, for now just the IP, duplicate this line for additional variables
         
         # time_stop_mills = int(round(time.time() * 1000))
         # print('Total execution time: ' + str(time_stop_mills - time_start_mills))
