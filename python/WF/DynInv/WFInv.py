@@ -59,7 +59,7 @@ class InventoryModule(BaseInventoryPlugin):
             feed = open(host_list, mode='r')
         except:
             print('Roh roh!')
-            return True
+            return False
         return True
 
     def parse(self, inventory, loader, host_list, cache=True):
@@ -69,15 +69,18 @@ class InventoryModule(BaseInventoryPlugin):
         # time_stop_mills = 0
 
         rows = csv.reader(feed)
-        for row in rows:
-            srv = WFServer(row[10], row[11], row[12], row[8], row[14], row[4], row[20])
+        for row in rows:                                                                # Loop for iterating throug the CSV via the reader
+            srv = WFServer(row[10], row[11], row[12], row[8], row[14], row[4], row[20]) # here we create the WFServer Object
 
-            if srv.dtc not in groups and srv.dtc != 'SA_FACILITY':
+            # groups is a control objects designed to keep track of a set of possible
+            # values for the datacenter grouping functionality
+            if srv.dtc not in groups and srv.dtc != 'SA_FACILITY':                      # make sure we are skipping the header row
                 groups.append(srv.dtc)
                 inventory.add_group(srv.dtc)
 
-            if srv.os != 'OS_SUPPORT':
-                # print(str(srv.fqn) + ' ' + str(srv.dtc))
+            # compater the value being stored against a known header value for the
+            # given column to make sure we are not storing a header
+            if srv.os != 'OS_SUPPORT':                                                  # make sure we are skipping the header row 
                 self.inventory.add_host(srv.fqn, group=srv.dtc)
         
         # time_stop_mills = int(round(time.time() * 1000))
