@@ -4,7 +4,7 @@ pipeline {
     stage('Clone our repo') {
       agent any
       steps {
-          sh 'echo Doing an ls on ${pwd} '
+          sh 'echo Doing an ls on $(pwd)'
           sh 'ls -ltr'
         }
       }
