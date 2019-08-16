@@ -1,13 +1,13 @@
 pipeline {
   agent none
-  stages {
-      stage('Listing out the directory') {
-        agent any
-        steps {
-          sh 'echo Doing an ls on $(pwd)'
-          sh 'ls -ltr'
-        }
-      }
+  // stages {
+  //     stage('Listing out the directory') {
+  //       agent any
+  //       steps {
+  //         sh 'echo Doing an ls on $(pwd)'
+  //         sh 'ls -ltr'
+  //       }
+  //     }
       stage('Pull the code') {
         agent any
         steps {
@@ -18,13 +18,13 @@ pipeline {
           url: 'https://github.com/codabilly/pipelines'
         }
       }
-      stage('Listing out the directory, again....') {
-        agent any
-        steps {
-          sh 'echo Doing an ls on $(pwd)'
-          sh 'ls -ltr'
-        }
-      }
+      // stage('Listing out the directory, again....') {
+      //   agent any
+      //   steps {
+      //     sh 'echo Doing an ls on $(pwd)'
+      //     sh 'ls -ltr'
+      //   }
+      // }
       stage('Promote to uat') {
         agent any
         steps {
