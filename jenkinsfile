@@ -9,6 +9,7 @@ pipeline {
         }
       }
       stage('Pull the code') {
+        agent any
         steps {
           git branch: 'dev',
           changelog: false,
