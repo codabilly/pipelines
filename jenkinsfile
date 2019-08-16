@@ -17,12 +17,12 @@ pipeline {
           url: 'https://github.com/codabilly/pipelines'
         }
       }
-      stage('Listing out the directory') {
+      stage('Listing out the directory, again....') {
         agent any
         steps {
           sh 'echo Doing an ls on $(pwd)'
           sh 'ls -ltr'
         }
-      }      
+      }
     }
   }
