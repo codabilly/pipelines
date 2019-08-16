@@ -25,14 +25,14 @@ pipeline {
           sh 'ls -ltr'
         }
       }
-      stage('Promote to UAT') {
+      stage('Promote to uat') {
         agent any
         steps {
           sh '''
             echo $(git status);
-            echo $(git branch);
-            git checkout dev;
-            git checkout UAT;
+            echo $(git branch -a);
+            // git checkout dev;
+            git checkout uat;
             git merge dev;
           '''
         }
