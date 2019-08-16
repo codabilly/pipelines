@@ -1,41 +1,41 @@
 pipeline {
   agent none
   stages {
-  //     stage('Listing out the directory') {
-  //       agent any
-  //       steps {
-  //         sh 'echo Doing an ls on $(pwd)'
-  //         sh 'ls -ltr'
-  //       }
-  //     }
-      stage('Pull the code') {
-        agent any
-        steps {
-          git branch: 'dev',
-          changelog: false,
-          credentialsId: 'ssh_username_with_ky',
-          poll: false,
-          url: 'https://github.com/codabilly/pipelines'
-        }
+    stage('Clean workspace') {
+      agent any
+      steps {
+        sh 'echo cleaning workspace'
+        sh 'rm -rf *'
+        sh 'echo All done!'
       }
-      // stage('Listing out the directory, again....') {
-      //   agent any
-      //   steps {
-      //     sh 'echo Doing an ls on $(pwd)'
-      //     sh 'ls -ltr'
-      //   }
-      // }
-      stage('Promote to uat') {
-        agent any
-        steps {
-          sh '''
-            echo $(git status);
-            echo $(git branch -a);
-            git checkout uat;
-            git merge dev;
-          '''
-            // git checkout dev;
-        }
+    }
+    stage('Pull the code') {
+      agent any
+      steps {
+        git branch: 'dev',
+        changelog: false,
+        credentialsId: 'ssh_username_with_ky',
+        poll: false,
+        url: 'https://github.com/codabilly/pipelines'
+      }
+    }
+    stage('Promote to uat') {
+      agent any
+      steps {
+        sh '''
+          echo $(git status);
+          echo $(git branch -a);
+          git checkout uat;
+          git merge dev;
+        '''
       }
     }
   }
+}
+// stages {
+//   stage('name') {
+//     agent any
+//     steps {
+//
+//     }
+//   }
