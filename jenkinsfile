@@ -1,4 +1,19 @@
-node {
-   echo 'Que es lo que es laopecillo? '
-   sh 'env'
+pipeline {
+  agent none
+  stages {
+    stage('Clone our repo') {
+      agent any
+      steps {
+
+          sh 'ls -ltr'
+        }
+      steps {
+        git branch: 'dev', credentialsId: '4c3d2378-b12f-479f-b67d-04ce0f449e5c', url: 'https://github.com/codabilly/pipelines'
+        }
+      steps {
+          sh 'ls -ltr'
+        }
+      }
+    }
+  }
 }
