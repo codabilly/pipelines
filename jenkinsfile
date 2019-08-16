@@ -6,8 +6,8 @@ pipeline {
       steps {
         sh 'echo cleaning workspace'
         sh 'rm -rf *'
-        sh 'Removing any .git stores'
-        sh 'rm -rf .git'
+        // sh 'Removing any .git stores'
+        // sh 'rm -rf .git'
         sh 'echo All done!'
       }
     }
