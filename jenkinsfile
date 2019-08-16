@@ -29,6 +29,7 @@ pipeline {
           echo $(git branch -a);
           git checkout uat;
           git merge dev;
+          git push;
         '''
       }
     }
